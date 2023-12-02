@@ -21,32 +21,22 @@ namespace OtusHW_SOLID
         {
             ColorConsole.ColorWriteLine("Я загадал целое число от 1 до 10 (включительно), " +
                                         "попробуйте угадать его. У Вас 3 попытки.", ConsoleColor.Green);
-            try
+            for (int i = 0; i < 3; i++)
             {
-                for (int i = 0; i < 3; i++)
+                switch (ResponceProcessing())
                 {
-                    switch (ResponceProcessing())
-                    {
-                        case 0:
-                            ColorConsole.ColorWriteLine("Вы угадали, поздравляю!", ConsoleColor.Green);
-                            break;
-                        case 1:
-                            ColorConsole.ColorWriteLine("Вы не угадали, попробуйте снова^_^", ConsoleColor.DarkGreen);
-                            break;
-                        case 2:
-                            ColorConsole.ColorWriteLine("Вы не угадали, попробуйте снова^_^", ConsoleColor.DarkGreen);
-                            break;
-                    }
+                    case 0:
+                        ColorConsole.ColorWriteLine("Вы угадали, поздравляю!", ConsoleColor.Green);
+                        break;
+                    case 1:
+                        ColorConsole.ColorWriteLine("Вы не угадали, попробуйте снова^_^", ConsoleColor.DarkGreen);
+                        break;
+                    case 2:
+                        ColorConsole.ColorWriteLine("Вы не угадали, попробуйте снова^_^", ConsoleColor.DarkGreen);
+                        break;
                 }
             }
-            catch (ArgumentNullException)
-            {
-                ColorConsole.ColorWriteLine("Вы ничего не ввели.", ConsoleColor.Yellow);
-            }
-            catch (FormatException)
-            {
-                ColorConsole.ColorWriteLine("Вы ввели арабскую цифру/целое число?", ConsoleColor.Yellow);
-            }
+
         }
         private int ResponceProcessing()
         {
