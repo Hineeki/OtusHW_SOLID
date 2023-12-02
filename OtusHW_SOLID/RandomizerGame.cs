@@ -30,9 +30,17 @@ namespace OtusHW_SOLID
                         break;
                     case 1:
                         ColorConsole.ColorWriteLine("Вы не угадали, попробуйте снова^_^", ConsoleColor.DarkGreen);
+                        if (i == 2)
+                        {
+                            ColorConsole.ColorWriteLine("Ответ: "+Answer.ToString(), ConsoleColor.DarkGreen);
+                        }
                         break;
                     case 2:
                         ColorConsole.ColorWriteLine("Вы не угадали, попробуйте снова^_^", ConsoleColor.DarkGreen);
+                        if (i == 2)
+                        {
+                            ColorConsole.ColorWriteLine("Ответ: " + Answer.ToString(), ConsoleColor.DarkGreen);
+                        }
                         break;
                 }
             }
