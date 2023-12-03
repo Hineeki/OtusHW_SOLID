@@ -26,7 +26,11 @@ namespace OtusHW_SOLID
             Console.ResetColor();
         }
         
-        //Неудобный метод, можно написать только одну строку
+        /// <summary>
+        /// Этот метод выводит в центр консоли текст, но курсор вохвращать нужно ручками.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="consoleColor"></param>
         public static void CenterColorWrite(string text, ConsoleColor consoleColor)
         {
             int centerX = (Console.WindowWidth / 2) - (text.Length / 2);
