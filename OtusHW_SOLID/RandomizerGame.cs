@@ -56,6 +56,7 @@ namespace OtusHW_SOLID
             }
 
         }
+
         private int ResponceProcessing()
         {
             var responce = int.Parse(Console.ReadLine());

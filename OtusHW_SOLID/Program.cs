@@ -23,14 +23,6 @@
                         continue;
                     }
                 }
-                catch (ArgumentNullException)
-                {
-                    Console.Clear();
-                    ColorConsole.ColorWriteLine("Вы ввели арабскую цифру/целое число?", ConsoleColor.Yellow);
-                    Console.WriteLine("Нажмите ENTER чтобы продолжить.");
-                    Console.ReadLine();
-                    Console.Clear();
-                }
                 catch (FormatException)
                 {
                     Console.Clear();
