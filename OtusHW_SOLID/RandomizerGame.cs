@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using InterfacesLibrary;
 
 namespace OtusHW_SOLID
 {
-    public class RandomizerGame
+    public class RandomizerGame : IRandomizerGame
     {
         public int Answer { get; }
 
-        public RandomizerGame()
+        public IColorConsole ColorConsole { get; }
+
+        public RandomizerGame(IColorConsole colorConsoleClass)
         {
             Random random = new Random();
             Answer = random.Next(1,10);
+            ColorConsole = colorConsoleClass;
         }
 
         public void Run()
@@ -57,7 +55,7 @@ namespace OtusHW_SOLID
 
         }
 
-        private int ResponceProcessing()
+        public int ResponceProcessing()
         {
             var responce = int.Parse(Console.ReadLine());
             if (responce < Answer)

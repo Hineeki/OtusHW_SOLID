@@ -1,25 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using InterfacesLibrary;
 
 namespace OtusHW_SOLID
 {
-    static class ColorConsole
+    public class ColorConsole : IColorConsole
     {
         /// <summary>
         /// Этот метод выводит в консоль текст, меняя цвет текста на ConsoleColor, затем сбрасывает цвет текста.
         /// </summary>
         /// <param name="text">Выводимый текст</param>
         /// <param name="consoleColor">Цвет текста</param>
-        public static void ColorWriteLine(string text, ConsoleColor consoleColor)
+        public void ColorWriteLine(string text, ConsoleColor consoleColor)
         {
             Console.ForegroundColor = consoleColor;
             Console.WriteLine(text);
             Console.ResetColor();
         }
-        public static void ColorWrite(string text, ConsoleColor consoleColor)
+        public void ColorWrite(string text, ConsoleColor consoleColor)
         {
             Console.ForegroundColor = consoleColor;
             Console.Write(text);
@@ -27,11 +23,11 @@ namespace OtusHW_SOLID
         }
         
         /// <summary>
-        /// Этот метод выводит в центр консоли текст, но курсор вохвращать нужно ручками.
+        /// Этот метод выводит в центр консоли текст, но курсор возвращать нужно ручками.
         /// </summary>
         /// <param name="text"></param>
         /// <param name="consoleColor"></param>
-        public static void CenterColorWrite(string text, ConsoleColor consoleColor)
+        public void CenterColorWrite(string text, ConsoleColor consoleColor)
         {
             int centerX = (Console.WindowWidth / 2) - (text.Length / 2);
             int centerY = (Console.WindowHeight / 2) - 1;
@@ -39,7 +35,7 @@ namespace OtusHW_SOLID
             ColorWrite(text, consoleColor);
 
         }
-        public static void NextLineColorWrite(string text, ConsoleColor consoleColor)
+        public void NextLineColorWrite(string text, ConsoleColor consoleColor)
         {
             Console.WriteLine();
             int centerX = (Console.WindowWidth / 2) - (text.Length / 2);
@@ -47,6 +43,5 @@ namespace OtusHW_SOLID
             Console.SetCursorPosition(centerX, centerY);
             ColorWrite(text, consoleColor);
         }
-
     }
 }

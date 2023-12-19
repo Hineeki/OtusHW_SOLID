@@ -4,14 +4,15 @@
     {
         static void Main(string[] args)
         {
+            ColorConsole colorConsole = new ColorConsole();
             while (true)
             {
                 try
                 {
-                    var randomizer = new RandomizerGame();
+                    var randomizer = new RandomizerGame(colorConsole);
                     randomizer.Run();
-                    ColorConsole.NextLineColorWrite("Хотите продолжить?", ConsoleColor.Blue);
-                    ColorConsole.NextLineColorWrite("Y/N ?", ConsoleColor.Blue);
+                    randomizer.ColorConsole.NextLineColorWrite("Хотите продолжить?", ConsoleColor.Blue);
+                    randomizer.ColorConsole.NextLineColorWrite("Y/N ?", ConsoleColor.Blue);
                     var responce = Console.ReadLine().ToUpper();
                     if (responce == ConsoleKey.N.ToString())
                     {
@@ -26,7 +27,7 @@
                 catch (FormatException)
                 {
                     Console.Clear();
-                    ColorConsole.ColorWriteLine("Вы ввели арабскую цифру/целое число?", ConsoleColor.Yellow);
+                    colorConsole.ColorWriteLine("Вы ввели арабскую цифру/целое число?", ConsoleColor.Yellow);
                     Console.WriteLine("Нажмите ENTER чтобы продолжить.");
                     Console.ReadLine();
                     Console.Clear();
